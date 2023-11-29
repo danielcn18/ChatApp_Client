@@ -1,0 +1,336 @@
+:root {
+    --primary: #4e416cff;
+    --primary-light: #a186e0;
+    --primary-lighter: #beaee1;
+    --primary-dark: #302d38;
+    --primary-white: #e1e1e1;
+    --white: #fff;
+    /* --light-green: #CFE4A7; */
+    --light-green: #b3c690;
+    --light-red: #c67171;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#root {
+    background-color: var(--primary-white);
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 6rem;
+}
+
+/* Login & Signup */
+.container {
+    background-color: var(--white);
+    /* padding: 2rem; */
+    text-align: center;
+    width: 30%;
+    padding: 3.5rem 1rem;
+    border-radius: 4px;
+    box-shadow: rgb(117, 117, 117) 3px 3px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container h1 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.container input {
+    width: 80%; 
+    padding: 1rem;
+    margin: 0.5rem 0px;
+    background-color: var(--primary-white);
+    color: var(--primary-dark);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.container input:focus {
+    background-color: var(--white);
+    border: 1px solid var(--primary-light);
+    color: var(--primary-light);
+}
+
+.container .btn {
+    width: 100%;
+    min-width: 150px;
+    padding: 1rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    background-color: #4e416cff;
+    color: #fff;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.container .err {
+    color: var(--light-red);
+    font-weight: bold;
+}
+
+.container a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-light);
+}
+
+/* Chats */
+
+.header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.header a {
+    color: var(--primary);
+}
+
+.header a:active {
+    color: var(--primary);
+}
+
+.header .aside {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header p {
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.header .btn {
+    border-radius: 50%;
+    padding: 0.5rem 0.6rem 0.4rem 0.7rem;
+    border: none;
+    background-color: var(--white);
+    cursor: pointer;
+    /* text-decoration: none; */
+}
+
+.header i {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+}
+
+#chats, 
+#rooms {
+    background-color: var(--white);
+    height: 90vh;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Contacts List */
+
+#contactsList,
+#roomMembers {
+    width: 25%;
+    /* width: 40%; */
+    overflow-y: auto;
+}
+
+#contactsList button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+#contactsList button i {
+    margin-left: 0.5rem;
+}
+
+.contacts,
+.rooms {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contacts li, 
+.rooms li {
+    padding: 1.2rem;
+    background-color: var(--primary-white);
+    color: var(--primary-dark);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.rooms li {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Create Room */
+
+.form-wrapper#createRoom {
+    padding-top: 2rem;
+}
+
+#createRoom .container {
+    height: fit-content;
+}
+
+.contacts .selected {
+    background-color: var(--light-green);
+}
+
+/* Open Chat */
+#openChat {
+    width: 90%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+    border: 1px solid var(--primary-white);
+    border-radius: 5px;
+}
+
+#openChat h2 {
+    width: fit-content;
+    margin: auto;
+    color: var(--primary);
+}
+
+#openChat .chat-header {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--primary-white);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.chat-header i {
+    text-align: end;
+}
+
+#openChat .chat-body {
+    height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.chat-body .messages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-body .message {
+    margin: 1rem 0;
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: var(--primary-lighter);
+}
+
+.chat-body .message.you {
+    border-bottom-right-radius: 0px;
+    text-align: end;
+    align-self: flex-end;
+}
+
+.chat-body .message.other {
+    border-bottom-left-radius: 0px;
+    text-align: start;
+}
+
+.chat-body .message p {
+    font-size: 1.1rem;
+}
+
+.chat-body .message span {
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+.chat-body h2 {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+}
+
+#openChat .chat-footer {
+    width: 100%;
+}
+
+.chat-footer form {
+    margin: 0;
+    height: 55px;
+    background-color: var(--primary-white);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-footer input {
+    flex: 1 1 0%; 
+    padding: 1rem 0px;
+    margin: 0px 0.5rem 0px 1rem;
+    border-radius: 20px;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-dark);
+    outline: none;
+    font-size: 1rem;
+}
+
+.chat-footer .message:focus {
+    outline: none;
+}
+
+.chat-footer .sendBtn {
+    margin-right: 0.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: var(--primary);
+    color: var(--primary-white);
+    outline: none;
+    border: none;
+    padding-top: 0.2rem;
+}
+
+.sendBtn i {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
